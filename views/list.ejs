@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= day %></h1>
+    <% for(var i = 0;i < todoList.length; i++ ){ %>
+    <ul>
+        <li><%= todoList[i] %></li>
+    </ul>
+    <% } %>
+    <form action="/" method="post">
+        <input type="text" name="newItem">
+        <button type="submit">Add to list</button>
+    </form>
+</body>
+</html>
