@@ -9,18 +9,18 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-todoList = ["nothing", "Hous"];
+let todoList = ["nothing", "Hous"];
 
 app.get("/", function(req, res){
-    var date = new Date();
+    let date = new Date();
 
-    var options = {
+    let options = {
         weekday: "long",
         day:     "numeric",
         month:   "long"
     }
 
-    var today = date.toLocaleDateString("pt-BR", options);
+    let today = date.toLocaleDateString("pt-BR", options);
     
     console.log("Got /");
     
@@ -28,7 +28,7 @@ app.get("/", function(req, res){
 });
 
 app.post("/", function(req, res){
-    var newItem = req.body.newItem;
+    let newItem = req.body.newItem;
 
     todoList.push(newItem);
 
