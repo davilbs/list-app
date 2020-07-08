@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css" >
-    <title>Document</title>
-</head>
-<body>
-    <h1><%= day %></h1>
-    <% for(var i = 0;i < listElement.length; i++ ){ %>
-    <ul>
-        <li><%= listElement[i] %></li>
-    </ul>
-    <% } %>
-    <form action="/" method="post">
-        <input type="text" name="newItem">
-        <button type="submit">Add to list</button>
-    </form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles.css" >
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="day-weather">
+            <h1 id="date"><%= day %></h1>
+            <h2 id="temperature"><%= weather.main.temp %>ºC</h1>
+            <img src=<%= icon %> alt="">
+            <form action="/forecast" method="post">
+                <button type="submit">Update</button>
+            </form>
+        </div>
+        <div class="list-container">
+            <h3>TO-DO LIST</h3>
+            <ul>
+                <% for(var i = 0;i < listElement.length; i++ ){ %>
+                    <li><%= listElement[i] %></li>
+                <% } %>
+            </ul>
+            <form action="/" method="post">
+                <input type="text" name="newItem">
+                <button type="submit">Add to list</button>
+            </form>
+        </div>
+    </body>
 </html>
